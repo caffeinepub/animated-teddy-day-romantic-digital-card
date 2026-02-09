@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "Create a romantic animated digital Teddy Day card with a cute, warm, dreamy vibe featuring a shy teddy bear, glowing heart, love letter text, floating hearts/sparkles, soft pastel lighting, and smooth animation sequence.",
+  "architectural_notes": [],
+  "known_issues": [],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Soft fluffy teddy bear illustration with a sweet, caring, slightly shy expression (teddy.dim_1024x1024.png)\n- Glowing heart illustration with soft bloom effect (glowing-heart.dim_512x512.png)\n- Love letter/envelope illustration suitable for opening animation (love-letter.dim_768x512.png)\n- Pastel dreamy background light-bokeh texture in pink/pastel tones (pastel-bokeh-bg.dim_1920x1080.png)\n- Small floating heart icons set in matching style (floating-hearts-set.dim_512x512.png)\n- Sparkle particles/overlays in soft white/pink (sparkles-overlay.dim_1024x1024.png)",
+  "existing_features": [
+    {
+      "id": "feature-create-a-single-page-romantic-animated-digital-card-experience-for-teddy-day-with-a-cute-warm-dreamy-love-vibe-a-soft-fluffy-teddy-bear-holding-a-glowing-heart-and-a-small-love-letter-with-gentle-floating-hearts-sparkles-and-soft-pink-pastel-background-lights",
+      "title": "Create a single-page romantic animated digital card experience for Teddy Day with a cute, warm, dreamy love vibe: a soft fluffy teddy bear holding a glowing heart and a small love letter, with gentle floating hearts, sparkles, and soft pink/pastel background lights.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-the-animation-sequence-with-smooth-transitions-1-teddy-walks-in-2-teddy-hugs-the-heart-3-teddy-opens-a-surprise-love-letter-to-reveal-the-provided-message",
+      "title": "Implement the animation sequence with smooth transitions: (1) teddy walks in, (2) teddy hugs the heart, (3) teddy opens a surprise love letter to reveal the provided message.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-render-the-love-letter-text-exactly-as-provided-including-line-breaks-and-emojis-when-the-letter-opens-happy-teddy-day-my-love-i-may-not-be-a-real-teddy-but-i-promise-to-hug-you-protect-you-and-stay-with-you-forever-i-m-your-teddy-always",
+      "title": "Render the love letter text exactly as provided (including line breaks and emojis) when the letter opens:\n“Happy Teddy Day my love ❤️\nI may not be a real teddy,\nbut I promise to hug you, protect you,\nand stay with you forever.\nI’m your teddy, always. 🧸”",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-an-optional-soft-background-music-feel-using-a-local-audio-asset-with-user-controls-muted-by-default-or-prompts-before-play-with-a-clear-mute-unmute-toggle-and-volume-control",
+      "title": "Add an optional soft “background music feel” using a local audio asset with user controls: muted by default (or prompts before play), with a clear mute/unmute toggle and volume control.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-establish-and-apply-a-cohesive-visual-theme-for-the-card-ui-colors-typography-spacing-and-controls-that-matches-a-warm-dreamy-pastel-aesthetic-avoid-default-unstyled-components-and-use-it-consistently-across-the-page",
+      "title": "Establish and apply a cohesive visual theme for the card UI (colors, typography, spacing, and controls) that matches a warm, dreamy pastel aesthetic (avoid default/unstyled components), and use it consistently across the page.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-ensure-the-card-is-performant-and-accessible-responsive-layout-reduced-motion-support-if-the-user-prefers-reduced-motion-and-keyboard-accessible-controls-for-replay-and-audio-toggles",
+      "title": "Ensure the card is performant and accessible: responsive layout, reduced-motion support (if the user prefers reduced motion), and keyboard-accessible controls for replay and audio toggles.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Create a romantic animated digital Teddy Day card (teddy walks in, hugs heart, opens surprise love letter with provided text; dreamy pastel background, floating hearts/sparkles, romantic/magical feel)",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Animated Teddy Day romantic digital card",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

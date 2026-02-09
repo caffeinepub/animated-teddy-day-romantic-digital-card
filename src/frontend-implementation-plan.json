@@ -1,0 +1,213 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Animated Teddy Day romantic digital card (single-page)",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Build a single-page dreamy pastel Teddy Day animated card scene using provided generated illustrations (teddy, glowing heart, love letter, floating hearts, sparkles, bokeh background).",
+      "acceptanceCriteria": [
+        "App renders a single-page animated card scene (no auth required)",
+        "Scene includes: teddy bear, glowing heart, love letter, floating hearts, sparkles, and soft pink/pastel background lighting",
+        "Visual tone is consistently cute/warm/dreamy/romantic and not harsh or high-contrast"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "create",
+          "description": "Create the single-page app view that renders the Teddy Day card scene (no routing/auth gating) and includes a simple layout wrapper for the experience."
+        },
+        {
+          "path": "frontend/src/components/TeddyDayCard/TeddyDayCard.tsx",
+          "operation": "create",
+          "description": "Implement the core card scene composition (background bokeh layer, teddy layer, glowing heart layer, love letter layer, floating hearts + sparkles overlay layers) using the generated images. Reference these static assets: frontend/public/assets/generated/teddy.dim_1024x1024.png, frontend/public/assets/generated/glowing-heart.dim_512x512.png, frontend/public/assets/generated/love-letter.dim_768x512.png, frontend/public/assets/generated/pastel-bokeh-bg.dim_1920x1080.png, frontend/public/assets/generated/floating-hearts-set.dim_512x512.png, frontend/public/assets/generated/sparkles-overlay.dim_1024x1024.png."
+        },
+        {
+          "path": "frontend/src/components/TeddyDayCard/teddyDayCard.css",
+          "operation": "create",
+          "description": "Add component-scoped CSS for dreamy scene layering (soft glows, gentle blur/bloom, subtle gradients) and base animations for hearts/sparkles; ensure visuals remain low-contrast and pastel."
+        },
+        {
+          "path": "frontend/public/assets/generated/teddy.dim_1024x1024.png",
+          "operation": "create",
+          "description": "Add the generated teddy illustration asset to be used by the card scene (static public asset)."
+        },
+        {
+          "path": "frontend/public/assets/generated/glowing-heart.dim_512x512.png",
+          "operation": "create",
+          "description": "Add the generated glowing heart illustration asset to be used by the card scene (static public asset)."
+        },
+        {
+          "path": "frontend/public/assets/generated/love-letter.dim_768x512.png",
+          "operation": "create",
+          "description": "Add the generated love letter/envelope illustration asset to be used by the card scene (static public asset)."
+        },
+        {
+          "path": "frontend/public/assets/generated/pastel-bokeh-bg.dim_1920x1080.png",
+          "operation": "create",
+          "description": "Add the generated pastel bokeh background texture asset to be used by the card scene (static public asset)."
+        },
+        {
+          "path": "frontend/public/assets/generated/floating-hearts-set.dim_512x512.png",
+          "operation": "create",
+          "description": "Add the generated floating hearts icon set asset to be used by the card scene (static public asset)."
+        },
+        {
+          "path": "frontend/public/assets/generated/sparkles-overlay.dim_1024x1024.png",
+          "operation": "create",
+          "description": "Add the generated sparkles overlay asset to be used by the card scene (static public asset)."
+        },
+        {
+          "path": "frontend/src/index.css",
+          "operation": "create",
+          "description": "Create src-local stylesheet required by frontend/src/main.tsx import; have it import/bridge to the existing frontend/index.css and add any minimal global base needed for the card background sizing (without changing main.tsx)."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Implement the smooth staged animation sequence (walk-in → hug heart → open letter) with a replay control to restart from the beginning.",
+      "acceptanceCriteria": [
+        "On page load, the animation plays in the specified order: walk-in → hug heart → open letter",
+        "Animations are smooth (no abrupt jumps), with clearly readable staging between steps",
+        "A visible replay control allows restarting the full sequence from the beginning"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/TeddyDayCard/useCardAnimationSequence.ts",
+          "operation": "create",
+          "description": "Add a small React hook to drive a deterministic animation state machine (walk-in, hug, open-letter) with timing, sequencing, and a replay/reset API."
+        },
+        {
+          "path": "frontend/src/components/TeddyDayCard/TeddyDayCard.tsx",
+          "operation": "modify",
+          "description": "Wire the sequence hook into the scene, applying phase-based classNames/inline styles to animate teddy position, heart interaction, and letter opening; include a visible replay control that resets the full sequence."
+        },
+        {
+          "path": "frontend/src/components/TeddyDayCard/teddyDayCard.css",
+          "operation": "modify",
+          "description": "Define keyframes/transitions for the three phases (walk-in translation, hug/heart scale + cuddle motion, letter opening/reveal) with eased timing and no abrupt jumps."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Show the provided love letter message exactly (including line breaks and emojis) with responsive, romantic greeting-card typography when the letter opens.",
+      "acceptanceCriteria": [
+        "The letter reveals the exact text content, line breaks, and emojis with no substitutions",
+        "Text remains legible on mobile and desktop (responsive layout)",
+        "Typography and spacing match the romantic greeting-card feel (e.g., soft, elegant, readable)"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/TeddyDayCard/LoveLetterMessage.tsx",
+          "operation": "create",
+          "description": "Create a focused component that renders the exact provided message string with preserved line breaks (e.g., using pre-line/whitespace handling) and romantic, readable typography."
+        },
+        {
+          "path": "frontend/src/components/TeddyDayCard/TeddyDayCard.tsx",
+          "operation": "modify",
+          "description": "Render LoveLetterMessage only during/after the open-letter phase, positioned within the letter art so it remains readable across viewport sizes."
+        },
+        {
+          "path": "frontend/src/components/TeddyDayCard/teddyDayCard.css",
+          "operation": "modify",
+          "description": "Add responsive text sizing/line-height and safe padding for the letter text area to ensure the full message is legible on mobile and desktop while matching the dreamy greeting-card aesthetic."
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Add optional local background audio with user controls (muted by default / user-gesture start), including mute/unmute and volume control.",
+      "acceptanceCriteria": [
+        "A local audio track is available and can be toggled on/off by the user",
+        "Audio does not auto-play in a way that violates common browser policies (user gesture required if needed)",
+        "Mute/unmute state is clearly indicated and can be changed at any time during animation"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/public/assets/audio/teddy-day-bg-music.mp3",
+          "operation": "create",
+          "description": "Add a local soft romantic background music asset for the card experience (static public asset)."
+        },
+        {
+          "path": "frontend/src/components/TeddyDayCard/useBackgroundAudio.ts",
+          "operation": "create",
+          "description": "Implement a hook that manages an HTMLAudioElement with muted-by-default behavior, user-gesture start, mute/unmute state, and volume persistence for the session."
+        },
+        {
+          "path": "frontend/src/components/TeddyDayCard/AudioControls.tsx",
+          "operation": "create",
+          "description": "Create themed audio controls UI (mute/unmute toggle + volume slider) with clear state indication and accessible labels."
+        },
+        {
+          "path": "frontend/src/components/TeddyDayCard/TeddyDayCard.tsx",
+          "operation": "modify",
+          "description": "Wire the audio hook + AudioControls into the card UI, ensuring playback only begins after an explicit user action (e.g., pressing unmute/play)."
+        }
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "summary": "Apply a cohesive warm dreamy pastel theme (colors, typography, spacing, control styling) consistently across the page; avoid default/unstyled controls and avoid blue/purple-dominant look.",
+      "acceptanceCriteria": [
+        "UI controls (replay, mute, volume) visually match the dreamy pastel theme",
+        "Consistent palette and typography are applied across the whole page",
+        "No blue/purple-dominant theme is introduced unless required by the user content"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/index.css",
+          "operation": "modify",
+          "description": "Adjust global CSS variables and base styles to a warm dreamy pastel palette (soft pinks/creams), set a consistent font stack, and ensure the page background supports the card aesthetic (avoid blue/purple-dominant defaults)."
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Extend Tailwind theme tokens (colors/shadows/animations if needed) to support a consistent pastel UI for controls and glows without introducing harsh contrast."
+        },
+        {
+          "path": "frontend/src/components/TeddyDayCard/controls.css",
+          "operation": "create",
+          "description": "Add dedicated styling for UI controls (replay, mute, volume) to match the dreamy pastel theme with soft shadows, rounded shapes, and consistent spacing (avoid default browser styling)."
+        },
+        {
+          "path": "frontend/src/components/TeddyDayCard/TeddyDayCard.tsx",
+          "operation": "modify",
+          "description": "Apply the themed control styles to replay and audio controls and ensure consistent spacing/placement within the card layout."
+        }
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "summary": "Ensure responsiveness, reduced-motion support, and accessible keyboard-operable controls with labels for replay and audio.",
+      "acceptanceCriteria": [
+        "Card layout adapts to common viewport sizes without clipping key elements (teddy, heart, letter text)",
+        "If the OS/browser prefers-reduced-motion is enabled, animations are reduced/simplified while still showing the full sequence outcome",
+        "Replay and audio controls are keyboard operable and have accessible labels"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/hooks/usePrefersReducedMotion.ts",
+          "operation": "create",
+          "description": "Add a small hook that reads prefers-reduced-motion and exposes a boolean for the card to reduce/simplify animations."
+        },
+        {
+          "path": "frontend/src/components/TeddyDayCard/TeddyDayCard.tsx",
+          "operation": "modify",
+          "description": "Use prefers-reduced-motion to shorten/disable motion-heavy transitions while still progressing through walk-in → hug → open-letter outcomes; ensure replay and audio controls are native <button>/<input> elements (or equivalents) with aria-labels and visible focus states."
+        },
+        {
+          "path": "frontend/src/components/TeddyDayCard/teddyDayCard.css",
+          "operation": "modify",
+          "description": "Add @media (prefers-reduced-motion: reduce) overrides to minimize animations (e.g., disable looping hearts/sparkles motion and replace with subtle fades) while keeping the final composed scene visible."
+        },
+        {
+          "path": "frontend/src/components/TeddyDayCard/controls.css",
+          "operation": "modify",
+          "description": "Ensure controls have strong but soft focus indicators, adequate hit targets, and keyboard-friendly styling consistent with the pastel theme."
+        }
+      ]
+    }
+  ]
+}

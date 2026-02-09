@@ -1,0 +1,128 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-create-a-single-page-romantic-animated-digital-card-experience-for-teddy-day-with-a-cute-warm-dreamy-love-vibe-a-soft-fluffy-teddy-bear-holding-a-glowing-heart-and-a-small-love-letter-with-gentle-floating-hearts-sparkles-and-soft-pink-pastel-background-lights",
+      "featureTitle": "Create a single-page romantic animated digital card experience for Teddy Day with a cute, warm, dreamy love vibe: a soft fluffy teddy bear holding a glowing heart and a small love letter, with gentle floating hearts, sparkles, and soft pink/pastel background lights.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/TeddyDayCard/TeddyDayCard.tsx",
+        "frontend/src/components/TeddyDayCard/teddyDayCard.css",
+        "frontend/src/index.css"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-the-animation-sequence-with-smooth-transitions-1-teddy-walks-in-2-teddy-hugs-the-heart-3-teddy-opens-a-surprise-love-letter-to-reveal-the-provided-message",
+      "featureTitle": "Implement the animation sequence with smooth transitions: (1) teddy walks in, (2) teddy hugs the heart, (3) teddy opens a surprise love letter to reveal the provided message.",
+      "files": [
+        "frontend/src/components/TeddyDayCard/TeddyDayCard.tsx",
+        "frontend/src/components/TeddyDayCard/teddyDayCard.css",
+        "frontend/src/components/TeddyDayCard/useCardAnimationSequence.ts"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-render-the-love-letter-text-exactly-as-provided-including-line-breaks-and-emojis-when-the-letter-opens-happy-teddy-day-my-love-i-may-not-be-a-real-teddy-but-i-promise-to-hug-you-protect-you-and-stay-with-you-forever-i-m-your-teddy-always",
+      "featureTitle": "Render the love letter text exactly as provided (including line breaks and emojis) when the letter opens:\n“Happy Teddy Day my love ❤️\nI may not be a real teddy,\nbut I promise to hug you, protect you,\nand stay with you forever.\nI’m your teddy, always. 🧸”",
+      "files": [
+        "frontend/src/components/TeddyDayCard/LoveLetterMessage.tsx",
+        "frontend/src/components/TeddyDayCard/TeddyDayCard.tsx",
+        "frontend/src/components/TeddyDayCard/teddyDayCard.css"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-3"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-an-optional-soft-background-music-feel-using-a-local-audio-asset-with-user-controls-muted-by-default-or-prompts-before-play-with-a-clear-mute-unmute-toggle-and-volume-control",
+      "featureTitle": "Add an optional soft “background music feel” using a local audio asset with user controls: muted by default (or prompts before play), with a clear mute/unmute toggle and volume control.",
+      "files": [
+        "frontend/src/components/TeddyDayCard/AudioControls.tsx",
+        "frontend/src/components/TeddyDayCard/TeddyDayCard.tsx",
+        "frontend/src/components/TeddyDayCard/useBackgroundAudio.ts"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-4"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-establish-and-apply-a-cohesive-visual-theme-for-the-card-ui-colors-typography-spacing-and-controls-that-matches-a-warm-dreamy-pastel-aesthetic-avoid-default-unstyled-components-and-use-it-consistently-across-the-page",
+      "featureTitle": "Establish and apply a cohesive visual theme for the card UI (colors, typography, spacing, and controls) that matches a warm, dreamy pastel aesthetic (avoid default/unstyled components), and use it consistently across the page.",
+      "files": [
+        "frontend/index.css",
+        "frontend/src/components/TeddyDayCard/TeddyDayCard.tsx",
+        "frontend/src/components/TeddyDayCard/controls.css",
+        "frontend/tailwind.config.js"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-5"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-ensure-the-card-is-performant-and-accessible-responsive-layout-reduced-motion-support-if-the-user-prefers-reduced-motion-and-keyboard-accessible-controls-for-replay-and-audio-toggles",
+      "featureTitle": "Ensure the card is performant and accessible: responsive layout, reduced-motion support (if the user prefers reduced motion), and keyboard-accessible controls for replay and audio toggles.",
+      "files": [
+        "frontend/src/components/TeddyDayCard/TeddyDayCard.tsx",
+        "frontend/src/components/TeddyDayCard/controls.css",
+        "frontend/src/components/TeddyDayCard/teddyDayCard.css",
+        "frontend/src/hooks/usePrefersReducedMotion.ts"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-6"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

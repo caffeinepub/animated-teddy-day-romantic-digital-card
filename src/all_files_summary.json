@@ -1,0 +1,23 @@
+{
+  "backend/main.mo": "Empty Motoko actor representing a placeholder backend with no logic.",
+  "feature_evidence.json": "Feature evidence report mapping high‑level features to involved files, components, tests, and confidence levels.",
+  "frontend-file-summaries.txt": "Reference list of prewritten summaries describing the purpose of various frontend files.",
+  "frontend/index.css": "Global Tailwind-based stylesheet defining pastel OKLCH theme variables and base typography.",
+  "frontend/index.html": "HTML entrypoint loading the React app into the root div and linking main.tsx.",
+  "frontend/src/App.tsx": "Main React component rendering the TeddyDayCard full-screen.",
+  "frontend/src/components/TeddyDayCard/AudioControls.tsx": "Renders mute/unmute button and volume slider for background audio control.",
+  "frontend/src/components/TeddyDayCard/controls.css": "Styling for replay and audio controls with pastel theming and responsiveness.",
+  "frontend/src/components/TeddyDayCard/LoveLetterMessage.tsx": "Shows the love letter text with preserved formatting when visible.",
+  "frontend/src/components/TeddyDayCard/teddyDayCard.css": "Defines full-scene layout, animations, layered effects, and responsive styling for the Teddy Day card.",
+  "frontend/src/components/TeddyDayCard/TeddyDayCard.tsx": "Orchestrates the animated Teddy Day scene, audio controls, phases, and layered visuals.",
+  "frontend/src/components/TeddyDayCard/useBackgroundAudio.ts": "Custom hook creating a looping HTMLAudioElement with play, mute, and volume controls tied to React state.",
+  "frontend/src/components/TeddyDayCard/useCardAnimationSequence.ts": "Manages phased card animations with timed transitions and progress updates, supporting reduced‑motion mode.",
+  "frontend/src/hooks/useActor.ts": "Creates and refreshes a backend actor based on Internet Identity state and invalidates related queries when it changes.",
+  "frontend/src/hooks/useInternetIdentity.ts": "Provides context and hooks for managing Internet Identity login, stored identity loading, and status tracking.",
+  "frontend/src/hooks/usePrefersReducedMotion.ts": "Detects the user's prefers‑reduced‑motion setting via a media query and updates on changes.",
+  "frontend/src/hooks/useQueries.ts": "Empty placeholder file indicating no backend data‑fetching hooks are needed.",
+  "frontend/src/index.css": "Resets layout styles and sets root element dimensions for the app.",
+  "frontend/src/main.tsx": "Bootstraps the React app with QueryClient and InternetIdentityProvider wrappers.",
+  "frontend/tailwind.config.js": "Configures Tailwind theme, plugins, colors, typography, animations, and layout settings.",
+  "project_state.json": "Stores project metadata, feature definitions, requirements, and image asset needs for the Teddy Day card app."
+}

@@ -1,0 +1,15 @@
+{
+  "frontend/src/App.tsx": "Main app component that renders the TeddyDayCard as a full-screen single-page experience.",
+  "frontend/src/index.css": "Bridges to the root index.css and ensures proper full-screen body/root sizing for the card.",
+  "frontend/index.css": "Global styles with warm dreamy pastel OKLCH color palette (soft pinks, creams) and Quicksand font family for romantic aesthetic.",
+  "frontend/tailwind.config.js": "Extended Tailwind config with Quicksand font, pastel color tokens, custom border radii, dreamy shadows, and animation keyframes for floating/sparkling effects.",
+  "frontend/src/hooks/usePrefersReducedMotion.ts": "Hook that detects user's prefers-reduced-motion setting and returns a boolean for conditional animation behavior.",
+  "frontend/src/hooks/useQueries.ts": "Empty placeholder file as the backend has no methods and no data fetching is required.",
+  "frontend/src/components/TeddyDayCard/useCardAnimationSequence.ts": "Custom hook managing the animation state machine (idle → walk-in → hug → open-letter → complete) with timing and replay functionality.",
+  "frontend/src/components/TeddyDayCard/useBackgroundAudio.ts": "Hook managing HTMLAudioElement for background music with muted-by-default behavior, play/pause, mute toggle, and volume control.",
+  "frontend/src/components/TeddyDayCard/AudioControls.tsx": "UI component rendering mute/unmute button and volume slider with accessible labels and themed styling.",
+  "frontend/src/components/TeddyDayCard/LoveLetterMessage.tsx": "Component displaying the exact love letter text with preserved line breaks and emojis when the letter opens.",
+  "frontend/src/components/TeddyDayCard/TeddyDayCard.tsx": "Main card scene component orchestrating all layers (background, floating hearts, sparkles, teddy, heart, letter), animation phases, audio controls, replay button, and footer with attribution.",
+  "frontend/src/components/TeddyDayCard/teddyDayCard.css": "Scene styling with layered composition, smooth animations for walk-in/hug/letter-open phases, floating hearts/sparkles effects, responsive breakpoints, and reduced-motion support.",
+  "frontend/src/components/TeddyDayCard/controls.css": "Themed styling for replay button and audio controls (mute button, volume slider) with soft pastel colors, rounded shapes, hover effects, focus indicators, and responsive sizing."
+}

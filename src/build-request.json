@@ -1,0 +1,142 @@
+{
+  "kind": "build_request",
+  "title": "Animated Teddy Day romantic digital card",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Create a single-page romantic animated digital card experience for Teddy Day with a cute, warm, dreamy love vibe: a soft fluffy teddy bear holding a glowing heart and a small love letter, with gentle floating hearts, sparkles, and soft pink/pastel background lights.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Create a romantic animated digital card for Teddy Day. Theme: cute, warm, dreamy love vibe. Scene shows a soft, fluffy teddy bear holding a glowing heart and a small love letter. ... Add gentle floating hearts, sparkles, and soft pink and pastel background lights."
+        ]
+      },
+      "acceptanceCriteria": [
+        "App renders a single-page animated card scene (no auth required)",
+        "Scene includes: teddy bear, glowing heart, love letter, floating hearts, sparkles, and soft pink/pastel background lighting",
+        "Visual tone is consistently cute/warm/dreamy/romantic and not harsh or high-contrast"
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Implement the animation sequence with smooth transitions: (1) teddy walks in, (2) teddy hugs the heart, (3) teddy opens a surprise love letter to reveal the provided message.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Include smooth animation where the teddy walks in, hugs a heart, and then opens a surprise love letter."
+        ]
+      },
+      "acceptanceCriteria": [
+        "On page load, the animation plays in the specified order: walk-in → hug heart → open letter",
+        "Animations are smooth (no abrupt jumps), with clearly readable staging between steps",
+        "A visible replay control allows restarting the full sequence from the beginning"
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Render the love letter text exactly as provided (including line breaks and emojis) when the letter opens:\n“Happy Teddy Day my love ❤️\nI may not be a real teddy,\nbut I promise to hug you, protect you,\nand stay with you forever.\nI’m your teddy, always. 🧸”",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Text on letter:\n‘Happy Teddy Day my love ❤️\nI may not be a real teddy,\nbut I promise to hug you, protect you,\nand stay with you forever.\nI’m your teddy, always. 🧸’"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The letter reveals the exact text content, line breaks, and emojis with no substitutions",
+        "Text remains legible on mobile and desktop (responsive layout)",
+        "Typography and spacing match the romantic greeting-card feel (e.g., soft, elegant, readable)"
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Add an optional soft “background music feel” using a local audio asset with user controls: muted by default (or prompts before play), with a clear mute/unmute toggle and volume control.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Make it emotional, romantic, and magical with soft background music feel."
+        ]
+      },
+      "acceptanceCriteria": [
+        "A local audio track is available and can be toggled on/off by the user",
+        "Audio does not auto-play in a way that violates common browser policies (user gesture required if needed)",
+        "Mute/unmute state is clearly indicated and can be changed at any time during animation"
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "Establish and apply a cohesive visual theme for the card UI (colors, typography, spacing, and controls) that matches a warm, dreamy pastel aesthetic (avoid default/unstyled components), and use it consistently across the page.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ]
+      },
+      "acceptanceCriteria": [
+        "UI controls (replay, mute, volume) visually match the dreamy pastel theme",
+        "Consistent palette and typography are applied across the whole page",
+        "No blue/purple-dominant theme is introduced unless required by the user content"
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "text": "Ensure the card is performant and accessible: responsive layout, reduced-motion support (if the user prefers reduced motion), and keyboard-accessible controls for replay and audio toggles.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Card layout adapts to common viewport sizes without clipping key elements (teddy, heart, letter text)",
+        "If the OS/browser prefers-reduced-motion is enabled, animations are reduced/simplified while still showing the full sequence outcome",
+        "Replay and audio controls are keyboard operable and have accessible labels"
+      ]
+    }
+  ],
+  "constraints": [
+    "Do not modify files under frontend/src/hooks/useInternetIdentity.ts, frontend/src/hooks/useInternetIdentity.tsx, frontend/src/hooks/useActor.ts, frontend/src/main.tsx, or frontend/src/components/ui (compose existing components instead).",
+    "Do not introduce any third-party authentication beyond Internet Identity (not needed for this app).",
+    "Do not rely on external databases or external APIs/services for the core card experience."
+  ],
+  "nonGoals": [
+    "User accounts, saving cards, or sharing via social media APIs",
+    "Real-time/multiplayer features or chat",
+    "Server-side rendering or Next.js-style routing"
+  ],
+  "imageRequirements": {
+    "required": [
+      "Soft fluffy teddy bear illustration with a sweet, caring, slightly shy expression (teddy.dim_1024x1024.png)",
+      "Glowing heart illustration with soft bloom effect (glowing-heart.dim_512x512.png)",
+      "Love letter/envelope illustration suitable for opening animation (love-letter.dim_768x512.png)",
+      "Pastel dreamy background light-bokeh texture in pink/pastel tones (pastel-bokeh-bg.dim_1920x1080.png)",
+      "Small floating heart icons set in matching style (floating-hearts-set.dim_512x512.png)",
+      "Sparkle particles/overlays in soft white/pink (sparkles-overlay.dim_1024x1024.png)"
+    ],
+    "edits": []
+  },
+  "userProfileUpdate": {
+    "goalsToAdd": [],
+    "goalsToRemove": [],
+    "preferencesToAdd": [
+      "Use English for any user-facing text in the build request."
+    ],
+    "preferencesToRemove": [],
+    "miscToAdd": [],
+    "miscToRemove": [],
+    "fieldsToSet": {},
+    "fieldsToDelete": []
+  }
+}

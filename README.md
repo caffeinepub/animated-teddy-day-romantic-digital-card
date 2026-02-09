@@ -1,2 +1,3 @@
-# animated-teddy-day-romantic-digital-card
-Exported from Caffeine project: Animated Teddy Day romantic digital card
+## Animated Teddy Day romantic digital card
+
+To run app build and run docker image: `docker build -t app . docker run -it --network host app`
